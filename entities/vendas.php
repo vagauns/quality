@@ -41,7 +41,7 @@ class Vendas {
                     FROM vendas AS vd
                     INNER JOIN produtos AS pr ON vd.produto_id = pr.id
                     WHERE vd.created_at BETWEEN '".date('Y-m-d', strtotime($from))." 00:00:00' AND '".date('Y-m-d', strtotime($to))." 00:00:00'
-                    GROUP BY YEAR(vd.created_at) ASC, WEEK(vd.created_at) ASC, vd.produto_id";
+                    GROUP BY YEAR(vd.created_at), WEEK(vd.created_at), vd.produto_id";
         $stmt = $this->connection->prepare($query);
         $stmt->execute();
         return $stmt;
@@ -55,7 +55,7 @@ class Vendas {
                 FROM vendas AS vd
                 INNER JOIN produtos AS pr ON vd.produto_id = pr.id
                 WHERE vd.created_at BETWEEN '".date('Y-m-d', strtotime($from))." 00:00:00' AND '".date('Y-m-d', strtotime($to))." 00:00:00'
-                GROUP BY YEAR(vd.created_at) ASC, MONTH(vd.created_at), produto_id";
+                GROUP BY YEAR(vd.created_at), MONTH(vd.created_at), produto_id";
 
         $stmt = $this->connection->prepare($query);
         $stmt->execute();

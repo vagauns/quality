@@ -67,6 +67,7 @@
 				} else {
 					$("#table").html(data.body);
 				}
+				$(".fa.fa-spinner").removeClass("loading");
 
 			}, 'json');
 
