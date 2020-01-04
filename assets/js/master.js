@@ -1,6 +1,6 @@
 (function($) {
 	
-	var dateFormat = "dd-mm-yy",
+	var dateFormat = "yy-mm-dd",
 	from = $( "#from" )
 	.datepicker({
 		defaultDate: "+1w",
@@ -60,6 +60,15 @@
 		} else {
 
 			$(".fa.fa-spinner").addClass("loading");
+			$.post("/getProdutos.php", {'start': from, 'end': to, 'group': group }, function(data){
+
+				if (data.error == true){
+					window.alert(data.message);
+				} else {
+					$("#table").html(data.body);
+				}
+
+			}, 'json');
 
 		}
 
