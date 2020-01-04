@@ -7,21 +7,15 @@ class Produto {
     private $connection;
 
     // table name
-    private $table_name = "Product";
+    private $table_name = "produtos";
 
     // table columns
     public $id;
     public $sku;
-    public $barcode;
     public $name;
     public $price;
-    public $unit;
-    public $quantity;
-    public $minquantity;
-    public $createdAt; 
-    public $updatedAt;
-    public $family_id;
-    public $location_id;
+    public $created_at; 
+    public $updated_at;
 
     public function __construct($connection){
         $this->connection = $connection;

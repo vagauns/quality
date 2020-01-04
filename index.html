@@ -4,6 +4,10 @@
 	<meta charset="UTF-8">
 	<title>Projeto</title>
 	<link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="./assets/css/app.css">
+	
 </head>
 <body>
 	<div class="container-fluid">
@@ -16,48 +20,55 @@
 					<div class="card-body">
 							<div class="form-row">
 								<div class="col-md-3 mb-3">
-									<label for="validationDefault01">Inicial:</label>
+									<label for="from">Inicial:</label>
 									<div class="input-group">
 										<div class="input-group-prepend">
-											<span class="input-group-text" id="inputGroupPrepend2">@</span>
+											<span class="input-group-text" id="inputGroupPrepend2">
+												<i class="fa fa-calendar"></i>
+											</span>
 										</div>
-										<input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+										<input type="text" class="form-control" id="from" required>
 									</div>
 								</div>
 								<div class="col-md-3 mb-3">
-									<label for="validationDefault02">Final</label>
+									<label for="to">Final</label>
 									<div class="input-group">
 										<div class="input-group-prepend">
-											<span class="input-group-text" id="inputGroupPrepend2">@</span>
+											<span class="input-group-text" id="inputGroupPrepend2">
+												<i class="fa fa-calendar"></i>
+											</span>
 										</div>
-										<input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+										<input type="text" class="form-control" id="to" required>
 									</div>
 								</div>
 								<div class="col-md-3 offset-md-1">
 									<label for="">Group by:</label>
 									<div class="form-inline">
 										<div class="form-check mr-3">
-											<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-											<label class="form-check-label" for="exampleRadios1">
+											<input class="form-check-input" type="radio" name="group" id="diario" value="diario" checked>
+											<label class="form-check-label" for="diario">
 												Diário
 											</label>
 										</div>
 										<div class="form-check mr-3">
-											<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-											<label class="form-check-label" for="exampleRadios1">
+											<input class="form-check-input" type="radio" name="group" id="semanal" value="semanal">
+											<label class="form-check-label" for="semanal">
 												Semanal
 											</label>
 										</div>
 										<div class="form-check">
-											<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-											<label class="form-check-label" for="exampleRadios1">
+											<input class="form-check-input" type="radio" name="group" id="mensal" value="mensal">
+											<label class="form-check-label" for="mensal">
 												Mensal
 											</label>
 										</div>
 									</div>
 								</div>
-								<div class="col-md-2">
-									
+								<div class="col-md-2" style="display: flex; justify-content: center; align-items: center;">
+									<button type="button" class="btn btn-primary" id="load">
+										<i class="fa fa-spinner"></i>
+										Carregar
+									</button>
 								</div>
 							</div>
 
@@ -66,5 +77,9 @@
 			</div>
 		</div>
 	</div>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="./assets/js/master.js"></script>
+
 </body>
 </html>
